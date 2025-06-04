@@ -1,24 +1,61 @@
-# 💸 Payments App
-
+💸 Payments App
 A basic version of a money transfer application inspired by Paytm. This project demonstrates simple functionality for transferring money between users, managing balances, and viewing transaction history.
 
-## 🚀 Features
+🚀 Features
+1: User registration and login
 
-- User registration and login
-- Add and manage bank balance
-- Transfer money between users
-- View transaction history
-- Simple and intuitive UI
+2: Add and manage bank balance
 
-## 🛠️ Tech Stack
+3: Transfer money between users
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js, Express
-- **Database:** MongoDB
+4: View transaction history
 
-## 📦 Setup Instructions
+5: Simple and intuitive UI
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/ankur-ctrl-z/Payments-App.git
-   cd Payments-App
+🛠️ Tech Stack
+. Frontend: React, Telwind, JavaScript
+
+. Backend: Node.js, Express
+
+. Database: MongoDB
+
+📦 Setup Instructions
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/ankur-ctrl-z/Payments-App.git
+cd Payments-App
+Install dependencies:
+
+nginx
+Copy
+Edit
+npm install
+Start the application:
+
+sql
+Copy
+Edit
+npm start
+Visit in browser:
+
+arduino
+Copy
+Edit
+http://localhost:3000
+📂 Project Structure
+Copy
+Edit
+Payments-App/
+├── backend/
+├── frontend/
+├── database/
+├── README.md
+└── ...
+🔒 Disclaimer
+This is a demo project intended for educational purposes. It does not handle real payments or use production-level security.
+
+📧 Contact
+Made by Ankur — feel free to reach out!
