@@ -1,5 +1,5 @@
 import { apiConnector } from "../apiConnector";
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BASE_URL = 'http://localhost:3000/api/v1';
 
 export const signup = async (firstname, lastname, email, password) => {
   try {
@@ -17,7 +17,7 @@ export const signup = async (firstname, lastname, email, password) => {
     }
   } catch (error) {
     console.log("Signup error...", error.message);
-  }
+  }  
 };
 
 export const signin = async (email, password) => {

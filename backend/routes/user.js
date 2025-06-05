@@ -15,12 +15,12 @@ const signupBody = zod.object({
 })
 
 router.post('/signup', async function(req,res){
-    const {success} = signupBody.safeParse(req.body)
-    if(!success){
-        return res.status(411).json({
-            message: "Email already taken/Incorrect inputs"
-        })
-    }
+const parseResult = signupBody.safeParse(req.body);
+if (!parseResult.success) {
+    return res.status(400).json({  // 400 is better for validation error
+        message: "Incorrect inputs"
+    });
+}
 
     const existingUser = await User.findOne({
         username: req.body.username
@@ -64,13 +64,12 @@ const signinBody = zod.object({
 })
 
 router.post("/signin",async function(req,res){
-    const {success} = signinBody.safeParse(req.body)
-    if(!success){
-        return res.status(411).json({
-            message: "Email already taken/ Incorrect inputs"
-        })
-    }
-
+const parseResult = signinBody.safeParse(req.body);
+if (!parseResult.success) {
+    return res.status(400).json({
+        message: "Incorrect inputs"
+    });
+}
 
     const user = await User.findOne({
         username: req.body.username,
@@ -123,11 +122,13 @@ router.get("/bulk", async (req, res) => {
     const users = await User.find({
         $or: [{// $or: Either condition can be true.
             firstName: {
-                "$regex": filter
+                "$regex": filter,
+                $options: "i"
             }
         }, {
             lastName: {
-                "$regex": filter
+                "$regex": filter,
+                $options: "i"
             }
         }]
     })
