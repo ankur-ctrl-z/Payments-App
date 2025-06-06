@@ -1,61 +1,109 @@
-💸 Payments App
-A basic version of a money transfer application inspired by Paytm. This project demonstrates simple functionality for transferring money between users, managing balances, and viewing transaction history.
+# 💸 Payments App
 
-🚀 Features
-1: User registration and login
+A full-stack payments management app to handle transactions, track balances, and view payment history. Built using modern web technologies.
 
-2: Add and manage bank balance
+---
 
-3: Transfer money between users
+## 🚀 Features
 
-4: View transaction history
+- 🔐 User Authentication (Login / Signup)
+- 💳 Add, Send, and Receive Payments
+- 📈 Transaction History with Filters
+- 🔔 Real-time Alerts & Notifications
+- 📱 Mobile Responsive UI
 
-5: Simple and intuitive UI
+---
 
-🛠️ Tech Stack
-. Frontend: React, Telwind, JavaScript
+## 🛠️ Tech Stack
 
-. Backend: Node.js, Express
+### Frontend:
+- React.js / Next.js
+- Tailwind CSS
+- TypeScript
 
-. Database: MongoDB
+### Backend:
+- Node.js / Express (or Hono for serverless)
+- Prisma ORM
+- PostgreSQL
 
-📦 Setup Instructions
-Clone the repository:
+### Deployment:
+- Vercel / Netlify (Frontend)
+- Railway / Render / PlanetScale (Backend + DB)
 
+---
+
+## 📦 Folder Structure
+
+/payments-app
+├── /client # Frontend (React or Next.js)
+└── /server # Backend (API + DB)
+
+yaml
+Copy
+Edit
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/payments-app.git
+cd payments-app
+2. Setup Backend
 bash
 Copy
 Edit
-git clone https://github.com/ankur-ctrl-z/Payments-App.git
-cd Payments-App
-Install dependencies:
-
-nginx
-Copy
-Edit
+cd server
 npm install
-Start the application:
-
-sql
+npx prisma generate
+npx prisma migrate dev
+npm run dev
+3. Setup Frontend
+bash
 Copy
 Edit
-npm start
-Visit in browser:
-
-arduino
+cd client
+npm install
+npm run dev
+🧪 Testing
+bash
 Copy
 Edit
-http://localhost:3000
-📂 Project Structure
+# run all backend tests
+cd server
+npm test
+🌐 Environment Variables
+Create a .env file in both /server and /client folders:
+
+Server
+
+env
 Copy
 Edit
-Payments-App/
-├── backend/
-├── frontend/
-├── database/
-├── README.md
-└── ...
-🔒 Disclaimer
-This is a demo project intended for educational purposes. It does not handle real payments or use production-level security.
+DATABASE_URL=postgresql://your-db-url
+JWT_SECRET=your-secret-key
+Client
 
-📧 Contact
-Made by Ankur — feel free to reach out!
+env
+Copy
+Edit
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+📝 License
+This project is licensed under the MIT License.
+
+🤝 Contributing
+Pull requests are welcome. For major changes, open an issue first to discuss what you’d like to change.
+
+📫 Contact
+Made with ❤️ by Ankur
+LinkedIn | Twitter
+
+yaml
+Copy
+Edit
+
+---
+
+Batao agar tujhe GitHub pe **preview ke liye badges, images, ya GIFs** bhi chahiye — woh
