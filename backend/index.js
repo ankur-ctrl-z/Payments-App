@@ -3,7 +3,7 @@ const cors = require('cors');
 const express = require("express");
 const rootRouter = require("./routes/index")
 
-const app = express();
+const app = express(); 
 app.use(cors());
 app.use(express.json());
 app.use((err, req, res, next) => {

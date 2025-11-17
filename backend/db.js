@@ -1,7 +1,7 @@
 // backend/db.js
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://testJWT:mOmFoRsXuvUBBBPU@cluster0.vm6rb5d.mongodb.net/')
+mongoose.connect('mongodb+srv://Paytm-Backend:yY17N81WTZ6oyyrd@paytm-backend.cd87vr4.mongodb.net/')
 
 // Create a Schema for Users
 const userSchema = new mongoose.Schema({
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         minLength: 6
     },
-    firstName: {
+    firstName: { 
         type: String,
         required: true,
         trim: true,
