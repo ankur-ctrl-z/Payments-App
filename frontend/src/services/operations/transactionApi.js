@@ -7,7 +7,7 @@ export const getBalance = async (token) => {
       "GET",
       `${BASE_URL}/account/balance`,
       null,
-      {
+      { 
         Authorization: `Bearer ${token}`,
       }
     );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Heading from "../components/Heading";
 import { useSearchParams } from "react-router-dom";
 import { sendMoney } from "../services/operations/transactionApi";

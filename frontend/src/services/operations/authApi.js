@@ -1,12 +1,12 @@
 import { apiConnector } from "../apiConnector";
 const BASE_URL = 'http://localhost:3000/api/v1';
 
-export const signup = async (firstname, lastname, email, password) => {
+export const signup = async (email, firstname, lastname, password) => {
   try {
     const response = await apiConnector("POST", `${BASE_URL}/user/signup`, {
+      username: email, 
       firstname: firstname,
       lastname: lastname,
-      username: email,
       password: password,
     });
 
@@ -24,7 +24,7 @@ export const signin = async (email, password) => {
   try {
     const response = await apiConnector("POST", `${BASE_URL}/user/signin`, {
       username: email,
-      password,
+      password : password
     });
 
     if (response.status === 200) {

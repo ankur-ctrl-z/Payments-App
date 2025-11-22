@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Users = () => {
   const [filter, setFilter] = useState("");
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]); 
   const setCurrentUser = useSetRecoilState(userAtom);
   const token = useRecoilValue(tokenAtom);
 

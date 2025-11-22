@@ -23,6 +23,6 @@ const Appbar = ({ user }) => {
       </div>
     </div>
   );
-};
+}; 
 
 export default Appbar;

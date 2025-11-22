@@ -16,7 +16,7 @@ const DropdownChildren = ({ label, onClick }) => {
       ) : (
         <MdOutlineSettings />
       )}
-      <div>{label}</div>
+      <div>{label}</div> 
     </div>
   );
 };

@@ -4,7 +4,7 @@ const BASE_URL = 'http//localhost:3000/api/v1';
 export const getUsers = async (token, filter) => {
   try {
     const response = await apiConnector(
-      "GET",
+      "GET", 
       `${BASE_URL}/user/bulk`,
       null,
       { Authorization: `Bearer ${token}` },

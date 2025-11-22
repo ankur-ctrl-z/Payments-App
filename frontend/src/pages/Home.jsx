@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -26,7 +25,7 @@ const Home = () => {
       </header>
       <main className="flex-grow bg-slate-300 flex flex-col justify-center items-center text-center px-4">
         <h1 className="font-semibold text-2xl mb-2">
-          Welcome to Payment's App
+          Welcome to Payment App
         </h1>
         <p className="text-lg mb-4">
           A safe and secure way to transfer your hard-earned money.

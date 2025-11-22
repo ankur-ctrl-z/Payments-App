@@ -4,7 +4,7 @@ import { tokenAtom } from "../../store/atoms";
 import { Navigate } from "react-router-dom";
 
 const PrivateRourte = ({ children }) => {
-  const token = useRecoilValue(tokenAtom);
+  const token = useRecoilValue(tokenAtom); 
 
   if (token !== null) {
     return children;

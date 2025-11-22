@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
+    email: "",
     firstname: "",
     lastname: "",
-    email: "",
     password: "",
   });
 
@@ -29,16 +29,16 @@ const Signup = () => {
   async function hanldeClick(event) {
     event.preventDefault();
     const response = await signup(
-      formData.firstname,
-      formData.lastname,
       formData.email,
+      formData.firstname,
+      formData.lastname, 
       formData.password
     );
     if (response === "User created successfully") {
       setFormData({
+        email: "",
         firstname: "",
         lastname: "",
-        email: "",
         password: "",
       });
       setShowError(false);
@@ -54,6 +54,13 @@ const Signup = () => {
           <Heading label={"Sign Up"} />
           <SubHeading label={"Enter your information to create an account"} />
           <InputBox
+            label={"Email"}
+            placeholder={"johndoe@example.com"}
+            name={"email"}
+            value={formData.email}
+            onChange={changeHandler}
+          />
+          <InputBox
             label={"First Name"}
             placeholder={"John"}
             name={"firstname"}
@@ -65,13 +72,6 @@ const Signup = () => {
             placeholder={"Doe"}
             name={"lastname"}
             value={formData.lastname}
-            onChange={changeHandler}
-          />
-          <InputBox
-            label={"Email"}
-            placeholder={"johndoe@example.com"}
-            name={"email"}
-            value={formData.email}
             onChange={changeHandler}
           />
           <InputBox

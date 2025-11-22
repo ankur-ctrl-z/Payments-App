@@ -34,9 +34,10 @@ if (!parseResult.success) {
 
     const user = await User.create({
         username: req.body.username,
-        password: req.body.password,
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        password: req.body.password
+
     })
 
     const userId = user._id;

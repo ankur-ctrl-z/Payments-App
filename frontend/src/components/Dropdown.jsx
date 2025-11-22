@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { tokenAtom, userAtom } from "../store/atoms";
 
-const Dropdown = () => {
+const Dropdown = () => { 
   const navigate = useNavigate();
   const setToken = useSetRecoilState(tokenAtom);
   const setUser = useSetRecoilState(userAtom);
