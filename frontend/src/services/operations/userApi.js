@@ -1,23 +1,20 @@
 import { apiConnector } from "../apiConnector";
-const BASE_URL = 'http//localhost:3000/api/v1';
+const BASE_URL = 'http://localhost:3000/api/v1';
 
 export const getUsers = async (token, filter) => {
   try {
     const response = await apiConnector(
-      "GET", 
+      "GET",
       `${BASE_URL}/user/bulk`,
-      null,
+      {},
       { Authorization: `Bearer ${token}` },
       { filter: filter }
     );
 
-    if (response.status === 200) {
-      return response.data.user;
-    } else {
-      throw new Error(response.data.message);
-    }
+    return response.data;  // IMPORTANT
   } catch (error) {
     console.log("Getusers error...", error.message);
+    return { user: [] };
   }
 };
 
@@ -26,15 +23,11 @@ export const getCurrentUser = async (token) => {
     const response = await apiConnector(
       "GET",
       `${BASE_URL}/user/getCurrentUser`,
-      null,
+      {},
       { Authorization: `Bearer ${token}` }
     );
 
-    if (response.status !== 200) {
-      throw new Error(response.data.message);
-    } else {
-      return response.data.currentUser;
-    }
+    return response.data.currentUser;
   } catch (error) {
     console.log("get user error...", error.message);
   }
@@ -49,12 +42,9 @@ export const updateCredentials = async (token, updatedData) => {
       { Authorization: `Bearer ${token}` }
     );
 
-    if (response.status !== 200) {
-      throw new Error(response.data.message);
-    } else {
-      return response.data.message;
-    }
+    return response.data.message;
   } catch (error) {
     console.log("Update credentials error...", error.message);
   }
 };
+

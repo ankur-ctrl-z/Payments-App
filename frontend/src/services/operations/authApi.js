@@ -1,29 +1,30 @@
 import { apiConnector } from "../apiConnector";
 const BASE_URL = 'http://localhost:3000/api/v1';
 
-export const signup = async (email, firstname, lastname, password) => {
+export const signup = async (username, firstName, lastName, password) => {
   try {
     const response = await apiConnector("POST", `${BASE_URL}/user/signup`, {
-      username: email, 
-      firstname: firstname,
-      lastname: lastname,
-      password: password,
+      username,
+      firstName,
+      lastName,
+      password,
     });
 
-    if (!response.status) {
+    if (response.status !== 200) {
       throw new Error(response.data.message);
-    } else {
-      return response.data.message;
     }
+
+    return response.data.message;
   } catch (error) {
     console.log("Signup error...", error.message);
-  }  
+  }
 };
 
-export const signin = async (email, password) => {
+
+export const signin = async (username, password) => {
   try {
     const response = await apiConnector("POST", `${BASE_URL}/user/signin`, {
-      username: email,
+      username: username,
       password : password
     });
 

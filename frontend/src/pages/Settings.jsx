@@ -28,11 +28,13 @@ const Settings = () => {
 
   async function handleClick() {
     const updatedData = {};
+
     if (formData.firstname) updatedData.firstname = formData.firstname;
     if (formData.lastname) updatedData.lastname = formData.lastname;
     if (formData.password) updatedData.password = formData.password;
 
     const response = await updateCredentials(token, updatedData);
+
     if (response === "user updated successfully") {
       setFormData({
         firstname: "",
@@ -46,47 +48,60 @@ const Settings = () => {
   }
 
   return (
-    <div>
+    <div className="min-h-screen bg-slate-300">
       <Appbar user={user.firstname} />
-      <div className="bg-slate-300 h-screen flex justify-center items-center">
-        <div className="bg-white rounded-lg w-[80%] sm:w-[50%] lg:w-[23%] text-center p-3">
-          <div className="flex flex-col">
-            <Heading label={"Update credentials"} />
-            <SubHeading
-              label={"Enter the information that you want to update"}
-            />
-            <InputBox
-              label={"First Name"}
-              placeholder={user.firstname}
-              name={"firstname"}
-              value={formData.firstname}
-              onChange={handleChange}
-            />
-            <InputBox
-              label={"Last Name"}
-              placeholder={user.lastname}
-              name={"lastname"}
-              value={formData.lastname}
-              onChange={handleChange}
-            />
-            <InputBox
-              label={"Password"}
-              placeholder={"*******"}
-              name={"password"}
-              value={formData.password}
-              onChange={handleChange}
-            />
-            <Button label={"Update"} onClick={handleClick} />
+
+      <div className="flex justify-center items-center h-[calc(100vh-64px)] px-4">
+        <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
+          <div className="flex flex-col space-y-4">
+
+            <div className="text-center">
+              <Heading label="Update Credentials" />
+              <SubHeading label="Enter the information that you want to update" />
+            </div>
+
+            <div className="space-y-3">
+              <InputBox
+                label="First Name"
+                placeholder={user.firstname}
+                name="firstname"
+                value={formData.firstname}
+                onChange={handleChange}
+              />
+
+              <InputBox
+                label="Last Name"
+                placeholder={user.lastname}
+                name="lastname"
+                value={formData.lastname}
+                onChange={handleChange}
+              />
+
+              <InputBox
+                label="Password"
+                placeholder="*******"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="mt-2">
+              <Button label="Update" onClick={handleClick} />
+            </div>
+
             {success && (
-              <div className="font-light text-green-400 text-xs mt-2">
+              <div className="text-center font-medium text-green-600 text-sm mt-2">
                 Data updated!
               </div>
             )}
+            
           </div>
-        </div> 
+        </div>
       </div>
     </div>
   );
 };
 
 export default Settings;
+

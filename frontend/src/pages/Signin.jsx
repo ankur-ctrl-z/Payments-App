@@ -40,34 +40,48 @@ const Signin = () => {
       setShowError(true);
     }
   }
+
   return (
-    <div className="h-screen bg-slate-300 flex justify-center items-center">
-      <div className="bg-white rounded-lg w-[80%] sm:w-[50%] lg:w-[23%] text-center p-3">
-        <div className="flex flex-col">
-          <Heading label={"Sign in"} />
-          <SubHeading label={"Enter your credentials to access your account"} />
-          <InputBox
-            label={"Email"}
-            placeholder={"johndoe@example.com"}
-            onChange={changeHandler}
-            name="email"
-            value={formData.email}
-          />
-          <InputBox
-            label={"Password"}
-            placeholder={"123456"}
-            onChange={changeHandler}
-            name="password"
-            value={formData.password}
-          />
-          <Button label={"Sign in"} onClick={hanldeClick} />
-          <BottomWarning
-            label={"Don't have an account? "}
-            to={"/signup"}
-            buttonText={"Sign up"}
-          />
+    <div className="h-screen bg-slate-300 flex justify-center items-center px-4">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
+        <div className="flex flex-col space-y-4">
+          <div className="text-center">
+            <Heading label="Sign in" />
+            <SubHeading label="Enter your credentials to access your account" />
+          </div>
+
+          <div className="space-y-3">
+            <InputBox
+              label="Email"
+              placeholder="johndoe@example.com"
+              onChange={changeHandler}
+              name="email"
+              value={formData.email}
+            />
+
+            <InputBox
+              label="Password"
+              placeholder="123456"
+              onChange={changeHandler}
+              name="password"
+              value={formData.password}
+            />
+          </div>
+
+          <div className="mt-2">
+            <Button label="Sign in" onClick={hanldeClick} />
+          </div>
+
+          <div className="mt-2 text-center">
+            <BottomWarning
+              label="Don't have an account? "
+              to="/signup"
+              buttonText="Sign up"
+            />
+          </div>
+
           {showError && (
-            <div className="font-light text-red-700 text-xs mt-2">
+            <div className="text-center font-medium text-red-600 text-sm mt-2">
               Signin Failed!
             </div>
           )}
@@ -78,3 +92,4 @@ const Signin = () => {
 };
 
 export default Signin;
+
